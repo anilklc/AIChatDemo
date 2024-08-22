@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Chat with AI";
+}
+
+<h2>AI Chat</h2>
+
+<div>
+    <input type="text" id="userInput" placeholder="Adınızı girin..." />
+    <input type="text" id="messageInput" placeholder="Mesajınızı yazın..." />
+    <button id="sendButton">Gönder</button>
+</div>
+<div id="messagesList"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/3.1.18/signalr.min.js"></script>
+<script>
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("https://localhost:7102/chatHub")
+        .build();
+
+    connection.on("ReceiveMessage", (user, message) => {
+        const msg = `<div><strong>${user}:</strong> ${message}</div>`;
+        document.getElementById("messagesList").innerHTML += msg;
+    });
+
+    connection.start().catch(err => console.error(err.toString()));
+
+    document.getElementById("sendButton").addEventListener("click", () => {
+        const user = document.getElementById("userInput").value;
+        const message = document.getElementById("messageInput").value;
+        connection.invoke("SendMessage", user, message).catch(err => console.error(err.toString()));
+    });
+</script>

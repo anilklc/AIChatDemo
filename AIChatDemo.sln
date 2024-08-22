@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIChatDemo.API", "AIChatDemo.API\AIChatDemo.API.csproj", "{F81B51E4-5276-4A13-9657-F9D52AD50F17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIChatDemo.Client", "AIChatDemo.Client\AIChatDemo.Client.csproj", "{70FEFA72-8025-4A6D-9595-167FF1D1087B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F81B51E4-5276-4A13-9657-F9D52AD50F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F81B51E4-5276-4A13-9657-F9D52AD50F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F81B51E4-5276-4A13-9657-F9D52AD50F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F81B51E4-5276-4A13-9657-F9D52AD50F17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70FEFA72-8025-4A6D-9595-167FF1D1087B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70FEFA72-8025-4A6D-9595-167FF1D1087B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70FEFA72-8025-4A6D-9595-167FF1D1087B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70FEFA72-8025-4A6D-9595-167FF1D1087B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {025F08AA-E9F0-4D1A-87B3-470A6B4A37F2}
+	EndGlobalSection
+EndGlobal

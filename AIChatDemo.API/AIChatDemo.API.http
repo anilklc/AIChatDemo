@@ -1,0 +1,6 @@
+@AIChatDemo.API_HostAddress = http://localhost:5252
+
+GET {{AIChatDemo.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
