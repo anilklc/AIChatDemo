@@ -1,5 +1,8 @@
+using AIChatDemo.API.Context;
 using AIChatDemo.API.Hubs;
+using AIChatDemo.API.Interfaces;
 using AIChatDemo.API.Services;
+using Microsoft.EntityFrameworkCore;
 using System.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +21,8 @@ builder.Services.AddCors(options =>
 
 // Add services to the container.
 
+builder.Services.AddDbContext<ChatDBContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("sqlConnection")));
+
 builder.Services.AddHttpClient<AIChatService>(client =>
 {
     var baseUrl = builder.Configuration["ChatGPT:BaseUrl"];
@@ -27,9 +32,12 @@ builder.Services.AddHttpClient<AIChatService>(client =>
     client.BaseAddress = new Uri(baseUrl);
     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
 });
+builder.Services.AddHttpContextAccessor();
+
 
 builder.Services.AddControllers();
 builder.Services.AddSignalR();
+builder.Services.AddScoped<IUserService, UserService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
