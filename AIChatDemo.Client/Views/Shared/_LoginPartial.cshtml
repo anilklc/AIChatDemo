@@ -1,0 +1,22 @@
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@if (HttpContextAccessor.HttpContext.Request.Cookies["UserId"] != null)
+{
+    <li class="navbar-nav">
+        <span class="nav-link text-dark">Merhaba @HttpContextAccessor.HttpContext.Request.Cookies["FullName"]!</span>
+    </li>
+    <li class="navbar-nav">
+        <form id="logoutForm" class="form-inline" asp-area="" method="post" asp-controller="User" asp-action="Logout">
+            <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Çıkış Yap</button>
+        </form>
+    </li>
+}
+else
+{
+    <li class="navbar-nav">
+        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Register">Kayıt Ol</a>
+    </li>
+    <li class="navbar-nav">
+        <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">Giriş Yap</a>
+    </li>
+}

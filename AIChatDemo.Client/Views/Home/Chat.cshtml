@@ -1,11 +1,13 @@
-﻿@{
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
     ViewData["Title"] = "Chat with AI";
 }
 
 <h2>AI Chat</h2>
 
 <div>
-    <input type="text" id="userInput" placeholder="Adınızı girin..." />
+    <input type="text" value="@HttpContextAccessor.HttpContext.Request.Cookies["FullName"]" id="userInput" readonly />
     <input type="text" id="messageInput" placeholder="Mesajınızı yazın..." />
     <button id="sendButton">Gönder</button>
 </div>
