@@ -47,12 +47,12 @@ The `ChatHub` class in the API handles all real-time messaging between the clien
 
 ### Screenshots
 
-![GIF 1](Screenshot/1.gif)
-![GIF 2](Screenshot/2.gif)
-![GIF 3](Screenshot/3.gif)
-![GIF 4](Screenshot/4.gif)
-![GIF 5](Screenshot/5.gif)
-![GIF 6](Screenshot/6.gif)
+![GIF 1](Screenshots/1.gif)
+![GIF 2](Screenshots/2.gif)
+![GIF 3](Screenshots/3.gif)
+![GIF 4](Screenshots/4.gif)
+![GIF 5](Screenshots/5.gif)
+![GIF 6](Screenshots/6.gif)
 
 
 ### License
