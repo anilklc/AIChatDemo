@@ -80,9 +80,8 @@ The `ChatHub` class in the API handles all real-time messaging between the clien
       dotnet run
       ```
 
-### Screenshots
 
-### Screenshots
+## Screenshots
 
 ![GIF 1](Screenshots/1.gif) 
 *Shows an error alert for incomplete form submission on the registration page.*
@@ -98,7 +97,6 @@ The `ChatHub` class in the API handles all real-time messaging between the clien
 
 ![GIF 5](Screenshots/5.gif) 
 *Shows individual conversations between two users and AI on different browsers.*
-
 
 
 ### License
