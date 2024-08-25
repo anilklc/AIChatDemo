@@ -1,10 +1,10 @@
 # AI Chat Demo
 
-## Introduction
+## Overview
 
 **AI Chat Demo** is a sample application designed to help you learn and reinforce your skills in real-time communication using SignalR and integrating OpenAI's ChatGPT within a .NET Core environment. The main goal of this project is to understand how to implement real-time communication with SignalR and how to integrate it with an AI service.
 
-## Technologies
+## Technologies Used
 
 - **.NET Core 8**: The base framework used for building the API and Client projects.
 - **SignalR**: Used for real-time communication between the client and server.
@@ -30,29 +30,75 @@ The `ChatHub` class in the API handles all real-time messaging between the clien
 - Sends these messages to OpenAI's ChatGPT via the `AIChatService`.
 - Returns the AI's response back to the user in real-time.
 
-### Installation
+## Installation
 
-1. Clone the repository:
+### Prerequisites
+
+- **.NET Core 8 SDK**
+- **PostgreSQL** (or another used database)
+- 
+### Steps
+
+1. **Clone the repository:**
     ```sh
     git clone https://github.com/anilklc/AIChatDemo.git
     ```
-2. Navigate to the project directory:
+
+2. **Navigate to the project directory:**
     ```sh
-    cd AIChatDemo.Client
+    cd AIChatDemo
     ```
-3. Run the application:
-    ```sh
-    dotnet run
-    ```
+
+3. **Set up the API:**
+
+    - **Navigate to the API project directory:**
+      ```sh
+      cd AIChatDemo.API
+      ```
+
+    - **Update the database connection string and other configurations in `appsettings.json`.**
+
+    - **Apply migrations and create the database:**
+      ```sh
+      dotnet ef database update
+      ```
+
+    - **Run the API application:**
+      ```sh
+      dotnet run
+      ```
+
+4. **Set up the Client:**
+
+    - **Navigate to the Client project directory:**
+      ```sh
+      cd ../AIChatDemo.Client
+      ```
+
+    - **Run the Client application:**
+      ```sh
+      dotnet run
+      ```
 
 ### Screenshots
 
-![GIF 1](Screenshots/1.gif)
-![GIF 2](Screenshots/2.gif)
-![GIF 3](Screenshots/3.gif)
-![GIF 4](Screenshots/4.gif)
-![GIF 5](Screenshots/5.gif)
-![GIF 6](Screenshots/6.gif)
+### Screenshots
+
+![GIF 1](Screenshots/1.gif) 
+*Shows an error alert for incomplete form submission on the registration page.*
+
+![GIF 2](Screenshots/2.gif) 
+*Displays a success alert for correct and complete form submission, followed by redirection to the login page.*
+
+![GIF 3](Screenshots/3.gif) 
+*Demonstrates an attempt to access the chat page without logging in, leading to redirection to the login page.*
+
+![GIF 4](Screenshots/4.gif) 
+*Shows successful access to the chat page after logging in.*
+
+![GIF 5](Screenshots/5.gif) 
+*Shows individual conversations between two users and AI on different browsers.*
+
 
 
 ### License
